@@ -33,7 +33,7 @@ void BenchmarkTable::PrintSide(int length) {
 		std::cout << '_';
 	}
 //	std::cout << std::endl;
-//	std::cout << std::endl;
+	std::cout << std::endl;
 }
 
 std::string BenchmarkTable::GetWord(const std::string& text)
