@@ -5,6 +5,8 @@ BenchmarkTable::BenchmarkTable(int test_count) {
     m_test_count = test_count;
 }
 
+
+
 double BenchmarkTable::GetAverageTime(double* work_time) {
 	double sum = 0;
 	for (int i = 0; i < m_test_count; ++i) {

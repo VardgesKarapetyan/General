@@ -88,7 +88,7 @@ void RunAllRubenidAlgorithms(int* array, int size, const int& test_count) {
 int*  GenerateRandomArray(int size) {
     int* array = new int[size];
 	for (int i = 0; i < size; ++i) {
-		array[i] = rand();
+		array[i] = rand() % 100000;
 	}
     return array;
 }
@@ -116,5 +116,6 @@ int main(int argc, char** argv) {
 	RunAllArshakidAlgorithms(array, size, test_count);
     RunAllBagratidAlgorithms(array, size, test_count);
 	RunAllRubenidAlgorithms(array, size, test_count);
+	delete[] array;
 	return 0;
 }
