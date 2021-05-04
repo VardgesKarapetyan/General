@@ -96,12 +96,12 @@ int*  GenerateRandomArray(int size) {
 int main(int argc, char** argv) {
 	srand(time(0));
 	if (argc < 2) {
-		std::cout << "No input size." << std::endl;
+		std::cout << "Error: No input size." << std::endl;
 		return -1;
 	}
 
 	if (atoi(argv[1]) < 2) {
-		std::cout << "You have to input positive number." << std::endl;	
+		std::cout << "Please input number bigger then 2." << std::endl;	
 		return -1;
 	}
 

@@ -28,7 +28,7 @@ void BenchmarkTable::SortByAverageTime() {
 }
 
 void BenchmarkTable::PrintSide(int length) {
-	std::cout << std::endl;
+//	std::cout << std::endl;
 	for (int i = 0; i < length; ++i) {
 		std::cout << '_';
 	}
