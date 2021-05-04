@@ -15,7 +15,7 @@ using namespace std;
 
 void RunAllArtaxiadAlgorithms(int* array, int size, const int& test_count) {
     BenchmarkTable table(test_count);
-	cout << "Artaxiad team algorithms: ";
+	cout << "\nArtaxiad team algorithms: ";
 	try {
 		table.Run(BubbleSortByArtaxiad, size, array, "Bubble");
 		table.Run(QuickSortByArtaxiad, size, array, "Quick");
@@ -33,7 +33,7 @@ void RunAllArtaxiadAlgorithms(int* array, int size, const int& test_count) {
 
 void RunAllArshakidAlgorithms(int* array, int size, const int& test_count) {
     BenchmarkTable table(test_count);
-	cout << "Arshakid team algorithms: ";
+	cout << "\nArshakid team algorithms: ";
 	try {
 		table.Run(BubbleSortByArshakid, size, array, "Bubble");
 		table.Run(QuickSortByArshakid, size, array, "Quick");
@@ -51,7 +51,7 @@ void RunAllArshakidAlgorithms(int* array, int size, const int& test_count) {
 
 void RunAllBagratidAlgorithms(int* array, int size, const int& test_count) {
     BenchmarkTable table(test_count);
-	cout << "Bagratid team algorithms: ";
+	cout << "\nBagratid team algorithms: ";
 	try {
 		table.Run(BubbleSortByBagratid, size, array, "Bubble");
 		table.Run(QuickSortByBagratid, size, array, "Quick");
@@ -69,7 +69,7 @@ void RunAllBagratidAlgorithms(int* array, int size, const int& test_count) {
 
 void RunAllRubenidAlgorithms(int* array, int size, const int& test_count) {
     BenchmarkTable table(test_count);
-	cout << "Rubenid team algorithms: ";
+	cout << "\nRubenid team algorithms: ";
 	try {
 		table.Run(BubbleSortByRubenid, size, array, "Bubble");
 		table.Run(QuickSortByRubenid, size, array, "Quick");
