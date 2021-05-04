@@ -95,7 +95,7 @@ int*  GenerateRandomArray(int size) {
 
 int main(int argc, char** argv) {
 	srand(time(0));
-	/*if (argc < 2) {
+	if (argc < 2) {
 		std::cout << "Error: No input size." << std::endl;
 		return -1;
 	}
@@ -107,7 +107,7 @@ int main(int argc, char** argv) {
 
 	if (atoi(argv[1]) > 100000) {
 		std::cout << "Please wait....." << std::endl;
-	}*/
+	}
 
 	int size = atoi(argv[1]);
 	int test_count = argc < 3 || atoi(argv[2]) <= 0 ? 3 : min(3, atoi(argv[2]));
