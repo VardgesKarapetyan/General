@@ -1,10 +1,8 @@
 out:
 	@make -s objs;
-	@mkdir -p bin;
 	@g++  -o bin/main objs/* -L. lib/*;
 
 objs:
-	@mkdir -p objs;
 	@g++ -c src/*.cpp
 	@mv *.o objs/
 
