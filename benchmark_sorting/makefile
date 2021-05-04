@@ -1,8 +1,8 @@
 out:
-	@make -s objs;
+	@make -s obj;
 	@g++  -o bin/main objs/* -L. lib/*;
 
-objs:
+obj:
 	@g++ -c src/*.cpp
 	@mv *.o objs/
 
