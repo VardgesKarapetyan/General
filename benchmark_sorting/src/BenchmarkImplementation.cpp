@@ -93,8 +93,7 @@ int*  GenerateRandomArray(int size) {
     return array;
 }
 
-int main(int argc, char** argv) {
-	srand(time(0));
+void CheckInputs(int a_argc, char** a_argv) {
 	if (argc < 2) {
 		std::cout << "Error: No input size." << std::endl;
 		return -1;
@@ -108,14 +107,22 @@ int main(int argc, char** argv) {
 	if (atoi(argv[1]) > 100000) {
 		std::cout << "Please wait....." << std::endl;
 	}
+}
 
-	int size = atoi(argv[1]);
-	int test_count = argc < 3 || atoi(argv[2]) <= 0 ? 3 : min(3, atoi(argv[2]));
-    int* array = GenerateRandomArray(size);
+void RunFunctions(int* array, int size, int test_count) {
 	RunAllArtaxiadAlgorithms(array, size, test_count);
 	RunAllArshakidAlgorithms(array, size, test_count);
     RunAllBagratidAlgorithms(array, size, test_count);
 	RunAllRubenidAlgorithms(array, size, test_count);
-	delete[] array;
+}
+
+int main(int argc, char** argv) {
+	//srand(time(0));
+	int size = atoi(argv[1]);
+	int test_count = argc < 3 || atoi(argv[2]) <= 0 ? 3 : min(3, atoi(argv[2]));
+    int* array = GenerateRandomArray(size);
+	
+	CheckInputs(argc, argv);
+	RunFunctions(array, size, test_count);
 	return 0;
 }
