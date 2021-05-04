@@ -95,6 +95,20 @@ int*  GenerateRandomArray(int size) {
 
 int main(int argc, char** argv) {
 	srand(time(0));
+	if(argc < 2) {
+		std::cout << "Please give array size" << std::endl;
+		return -1;
+	}
+
+	if(atoi(argv[1] < 0) {
+		std::cout << "You have to input positive number" << std::endl;	
+		return -1;
+	}
+
+	if(atoi(argv[1] > 100000) {
+		std::cout << "Please wait....." << std::endl;
+	}
+
 	int size = atoi(argv[1]);
 	int test_count = argc < 3 || atoi(argv[2]) <= 0 ? 3 : min(3, atoi(argv[2]));
     int* array = GenerateRandomArray(size);
