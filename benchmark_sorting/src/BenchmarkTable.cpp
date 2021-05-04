@@ -32,7 +32,7 @@ void BenchmarkTable::PrintSide(int length) {
 	for (int i = 0; i < length; ++i) {
 		std::cout << '_';
 	}
-	std::cout << std::endl;
+//	std::cout << std::endl;
 	std::cout << std::endl;
 }
 
