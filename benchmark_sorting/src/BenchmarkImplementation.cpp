@@ -13,6 +13,36 @@ typedef long long ll;
 
 using namespace std;
 
+void RunAllArtaxiadAlgorithms(int*, int, const int&);
+
+void RunAllArshakidAlgorithms(int*, int, const int&);
+
+void RunAllBagratidAlgorithms(int*, int, const int&);
+
+void RunAllRubenidAlgorithms(int*, int, const int&);
+
+int*  GenerateRandomArray(int);
+
+void CheckInputs(int, char**, int&, int&);
+
+void RunFunctions(int*, int, int);
+
+int main(int argc, char** argv) {
+	srand(time(0));
+	int size;
+	int test_count;
+	
+	try {
+		CheckInputs(argc, argv, size, test_count);
+		int* array = GenerateRandomArray(size);
+		RunFunctions(array, size, test_count);
+	}
+	catch (const char* message) {
+		cout << message << endl;
+	}
+	return 0;
+}
+
 void RunAllArtaxiadAlgorithms(int* array, int size, const int& test_count) {
     BenchmarkTable table(test_count);
 	cout << "\nArtaxiad team algorithms: ";
@@ -93,24 +123,17 @@ int*  GenerateRandomArray(int size) {
     return array;
 }
 
-bool CheckInputs(int argc, char** argv, int& size, int& test_count) {
+void CheckInputs(int argc, char** argv, int& size, int& test_count) {
 	if (argc < 2) {
-		std::cout << "Error: No input size." << std::endl;
-		return false;
+		throw "Error, no input size!";
 	}
 
-	if (atoi(argv[1]) < 0) {
-		std::cout << "Please input number bigger then 0." << std::endl;	
-		return false;
-	}
-
-	if (atoi(argv[1]) > 100000) {
+	if (atoi(argv[1]) > 10000) {
 		std::cout << "Please wait....." << std::endl;
 	}
 
 	size = atoi(argv[1]);
 	test_count = argc < 3 || atoi(argv[2]) <= 0 ? 3 : min(3, atoi(argv[2]));
-	return true;
 }
 
 void RunFunctions(int* array, int size, int test_count) {
@@ -118,16 +141,4 @@ void RunFunctions(int* array, int size, int test_count) {
 	RunAllArshakidAlgorithms(array, size, test_count);
     RunAllBagratidAlgorithms(array, size, test_count);
 	RunAllRubenidAlgorithms(array, size, test_count);
-}
-
-int main(int argc, char** argv) {
-	srand(time(0));
-	int size;
-	int test_count;
-	
-	if (CheckInputs(argc, argv, size, test_count)) {
-		int* array = GenerateRandomArray(size);
-		RunFunctions(array, size, test_count);
-	}
-	return 0;
 }
