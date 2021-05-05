@@ -37,7 +37,7 @@ int main(int argc, char** argv) {
 		int* array = GenerateRandomArray(size);
 		RunFunctions(array, size, test_count);
 	}
-	catch (const char* message) {
+	catch (const string message) {
 		cout << message << endl;
 	}
 	return 0;
