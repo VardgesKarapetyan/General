@@ -93,7 +93,7 @@ int*  GenerateRandomArray(int size) {
     return array;
 }
 
-void CheckInputs(int a_argc, char** a_argv) {
+void CheckInputs(int argc, char** argv) {
 	if (argc < 2) {
 		std::cout << "Error: No input size." << std::endl;
 		return -1;
