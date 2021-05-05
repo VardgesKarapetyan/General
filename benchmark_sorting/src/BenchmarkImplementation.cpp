@@ -128,7 +128,7 @@ int main(int argc, char** argv) {
     
 	int* array = GenerateRandomArray(size);
 	
-	CheckInputs(argc, argv);
+	CheckInputs(argc, argv, size, test_count);
 	RunFunctions(array, size, test_count);
 	return 0;
 }
