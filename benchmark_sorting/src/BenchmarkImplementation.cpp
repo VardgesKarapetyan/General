@@ -99,8 +99,8 @@ bool CheckInputs(int argc, char** argv, int& size, int& test_count) {
 		return false;
 	}
 
-	if (atoi(argv[1]) < 2) {
-		std::cout << "Please input number bigger then 2." << std::endl;	
+	if (atoi(argv[1]) < 0) {
+		std::cout << "Please input number bigger then 0." << std::endl;	
 		return false;
 	}
 
