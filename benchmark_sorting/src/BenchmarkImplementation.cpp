@@ -37,7 +37,7 @@ int main(int argc, char** argv) {
 		int* array = GenerateRandomArray(size);
 		RunFunctions(array, size, test_count);
 	}
-	catch (const string message) {
+	catch (const char* message) {
 		cout << message << endl;
 	}
 	return 0;
@@ -124,7 +124,7 @@ int*  GenerateRandomArray(int size) {
 }
 
 void CheckInputs(int argc, char** argv, int& size, int& test_count) {
-	if (argc < 2 || argv[1] <= 0) {
+	if (argc < 2 || atoi(argv[1]) <= 0) {
 		throw "Error, no input size!";
 	}
 	if (atoi(argv[1]) > 10000) {
