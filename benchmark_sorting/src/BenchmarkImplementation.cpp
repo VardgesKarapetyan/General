@@ -93,7 +93,7 @@ int*  GenerateRandomArray(int size) {
     return array;
 }
 
-void CheckInputs(int argc, char** argv) {
+void CheckInputs(int argc, char** argv, int& size, int& test_count) {
 	if (argc < 2) {
 		std::cout << "Error: No input size." << std::endl;
 		return;
@@ -107,6 +107,9 @@ void CheckInputs(int argc, char** argv) {
 	if (atoi(argv[1]) > 100000) {
 		std::cout << "Please wait....." << std::endl;
 	}
+
+	size = atoi(argv[1]);
+	test_count = argc < 3 || atoi(argv[2]) <= 0 ? 3 : min(3, atoi(argv[2]));
 }
 
 void RunFunctions(int* array, int size, int test_count) {
@@ -117,10 +120,14 @@ void RunFunctions(int* array, int size, int test_count) {
 }
 
 int main(int argc, char** argv) {
-	//srand(time(0));
-	int size = atoi(argv[1]);
-	int test_count = argc < 3 || atoi(argv[2]) <= 0 ? 3 : min(3, atoi(argv[2]));
-    int* array = GenerateRandomArray(size);
+	srand(time(0));
+	int size;
+	int test_count;
+	
+	CheckInputs(argc, argv, size, test_count);
+    
+	int* array = GenerateRandomArray(size);
+	
 	CheckInputs(argc, argv);
 	RunFunctions(array, size, test_count);
 	return 0;
