@@ -96,12 +96,12 @@ int*  GenerateRandomArray(int size) {
 void CheckInputs(int argc, char** argv) {
 	if (argc < 2) {
 		std::cout << "Error: No input size." << std::endl;
-		return -1;
+		return;
 	}
 
 	if (atoi(argv[1]) < 2) {
 		std::cout << "Please input number bigger then 2." << std::endl;	
-		return -1;
+		return;
 	}
 
 	if (atoi(argv[1]) > 100000) {
@@ -121,7 +121,6 @@ int main(int argc, char** argv) {
 	int size = atoi(argv[1]);
 	int test_count = argc < 3 || atoi(argv[2]) <= 0 ? 3 : min(3, atoi(argv[2]));
     int* array = GenerateRandomArray(size);
-	
 	CheckInputs(argc, argv);
 	RunFunctions(array, size, test_count);
 	return 0;
