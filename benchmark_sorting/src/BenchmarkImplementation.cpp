@@ -124,14 +124,12 @@ int*  GenerateRandomArray(int size) {
 }
 
 void CheckInputs(int argc, char** argv, int& size, int& test_count) {
-	if (argc < 2) {
+	if (argc < 2 || argv[1] <= 0) {
 		throw "Error, no input size!";
 	}
-
 	if (atoi(argv[1]) > 10000) {
 		std::cout << "Please wait....." << std::endl;
 	}
-
 	size = atoi(argv[1]);
 	test_count = argc < 3 || atoi(argv[2]) <= 0 ? 3 : min(3, atoi(argv[2]));
 }
